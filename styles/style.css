@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+@import url('pagina-jogo.css');
+
+:root {
+    --cor-vermelha: #AC0C0C;
+    --cor-cobra: #059212;
+    --cor-branca: #F6EEC9;
+    --cor-fonte: #1B1717;
+    --cor-borda-canvas: #FFA27F;
+
+    --fonte-open-sans: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--cor-branca);
+    font-family: var(--fonte-open-sans);
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--cor-fonte);
+    text-align: center;
+    margin: 6em 0;
+}
+
+/*Página inicial*/
+
+.botao__iniciar-jogo {
+    background-color: var(--cor-vermelha);
+    color: var(--cor-branca);
+    font-size: 1.8rem;
+    margin: 1em 0;
+    padding: 0.3em 1em;
+    border-radius: 6px;
+}

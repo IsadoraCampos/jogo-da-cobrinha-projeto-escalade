@@ -1,0 +1,38 @@
+.pontuacao__container {
+    position: fixed;
+    right: 0;
+    top: 0.5em;
+    margin-right: 1.5em;
+    text-align: right;
+    display: flex;
+    gap: 20px;
+}
+
+.melhor-pontuacao, .pontuacao {
+    font-size: 1rem;
+    flex-direction: row;
+}
+
+.canvas-container {
+    position: fixed;
+    top: 2em;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#canvas {
+    border: 5px solid var(--cor-borda-canvas);
+}
+
+.botao__voltar-menu {
+    position: fixed;
+    background-color: var(--cor-vermelha);
+    color: var(--cor-branca);
+    font-size: 1.5rem;
+    padding: 0.3em 1em;
+    border-radius: 6px;
+    margin-top: 17.3em;
+    transform: translate(-50%, -50%); /* ajusta para que o elemento fique alinhado com o ponto central da tela */
+}
