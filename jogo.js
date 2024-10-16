@@ -83,6 +83,10 @@ function andarCobra() {
     cabecaCobra.cobraX = cobraX
     cabecaCobra.cobraY = cobraY
 
+<<<<<<< HEAD
+=======
+    comerMaca()
+>>>>>>> a25ffd9 (Jogo atualizado)
     tamanhoCobra.push({x: cobraX, y: cobraY})
 
     if (cobraX > 485 || cobraX < 0) { //Caso a cobra saia da delimitação do jogo, a página é recarregada
@@ -95,7 +99,10 @@ function andarCobra() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     cobra.desenha()
     maca.desenha()
+<<<<<<< HEAD
     comerMaca()
+=======
+>>>>>>> a25ffd9 (Jogo atualizado)
 
     let maiorPontuacao = pontuacaoMelhor(pontuacoes, maior)
     //localStorage.removeItem('Melhor pontuação')
@@ -139,7 +146,11 @@ function comerMaca() {
          pontuacoes.push(quantMaca)
          totalCobra += 1
      } else {
+<<<<<<< HEAD
          tamanhoCobra.pop()
+=======
+         tamanhoCobra.pop() //Caso a cobra não comer a maçã, a última posição adicionada é retirada
+>>>>>>> a25ffd9 (Jogo atualizado)
      }
 }
 
@@ -162,4 +173,8 @@ function verificarPosicaoMaca() {
          return true
      }
     return false
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a25ffd9 (Jogo atualizado)
