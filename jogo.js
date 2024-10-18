@@ -48,13 +48,15 @@ function Cobra(largura, altura, cor, x, y) {
 
     this.desenha = () => {
         ctx.fillStyle = cobra.cor
-        for (let i = 0; i < tamanhoCobra.length; i++) {
+        for (let i = 0; i < totalCobra; i++) {
             ctx.fillRect(tamanhoCobra[i].x, tamanhoCobra[i].y, cobra.largura, cobra.altura)
         }
     }
 }
 
 function Maca(largura, altura, cor) {
+    this.largura = largura
+    this.altura = altura
    this.cor = cor
    this.macaX = gerarCoordenadaAleatoria()
    this.macaY = gerarCoordenadaAleatoria()
@@ -83,11 +85,14 @@ function andarCobra() {
     cabecaCobra.cobraX = cobraX
     cabecaCobra.cobraY = cobraY
 
-<<<<<<< HEAD
-=======
     comerMaca()
->>>>>>> a25ffd9 (Jogo atualizado)
-    tamanhoCobra.push({x: cobraX, y: cobraY})
+
+    if (tamanhoCobra.length == totalCobra) {
+        tamanhoCobra.shift();
+    }
+    if (tamanhoCobra.length < totalCobra) {
+        tamanhoCobra.push({x: cobraX, y: cobraY});
+    }
 
     if (cobraX > 485 || cobraX < 0) { //Caso a cobra saia da delimitação do jogo, a página é recarregada
        window.location.reload()
@@ -99,10 +104,6 @@ function andarCobra() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     cobra.desenha()
     maca.desenha()
-<<<<<<< HEAD
-    comerMaca()
-=======
->>>>>>> a25ffd9 (Jogo atualizado)
 
     let maiorPontuacao = pontuacaoMelhor(pontuacoes, maior)
     //localStorage.removeItem('Melhor pontuação')
@@ -145,12 +146,6 @@ function comerMaca() {
          pontuacaoAtual.innerHTML = `<p class="pontuacao">Pontuação atual: ${quantMaca}</p>`
          pontuacoes.push(quantMaca)
          totalCobra += 1
-     } else {
-<<<<<<< HEAD
-         tamanhoCobra.pop()
-=======
-         tamanhoCobra.pop() //Caso a cobra não comer a maçã, a última posição adicionada é retirada
->>>>>>> a25ffd9 (Jogo atualizado)
      }
 }
 
@@ -165,16 +160,12 @@ function pontuacaoMelhor(pontuacoes, maior) {
 
 // Para que a cobra consiga comer sem que ela e a maçã estajam exatamente na mesma posição
 function verificarPosicaoMaca() {
-     if ((cabecaCobra.cobraX === maca.macaX) && (cabecaCobra.cobraY === maca.macaY)) {
-         return true
-     } else if ((cabecaCobra.cobraX === (maca.macaX + 1)) && (cabecaCobra.cobraY === (maca.macaY + 1))) {
-         return true
-     } else if ((cabecaCobra.cobraX === (maca.macaX - 1)) && (cabecaCobra.cobraY === (maca.macaY - 1))) {
-         return true
-     }
-    return false
-<<<<<<< HEAD
+    if ((cabecaCobra.cobraX + cobra.largura) < (maca.macaX) || (cabecaCobra.cobraX) > (maca.macaX + maca.largura))
+        return false;
+
+    if ((cabecaCobra.cobraY + cobra.altura) < maca.macaY || (cabecaCobra.cobraY) > (maca.macaY + maca.altura))
+        return false;
+
+    return true;
 }
-=======
-}
->>>>>>> a25ffd9 (Jogo atualizado)
+
