@@ -23,7 +23,7 @@ if (maiorJSON === null) {
 }
 
 maior = JSON.parse(maiorJSON)
-melhorPontuacao.innerHTML = `<p class="melhor-pontuacao">Melhor pontuação: ${maior}</p>`
+melhorPontuacao.innerHTML = `<p class="melhor-pontuacao">Melhor pontuação: ${maior} &#x1F34E</p>`
 
 var cobra = new Cobra(18, 18, "#059212", cobraX, cobraY)
 var maca = new Maca(18, 18, "#AC0C0C")
@@ -115,7 +115,6 @@ function andarCobra() {
     cobra.morre()
 
     let maiorPontuacao = pontuacaoMelhor(pontuacoes, maior)
-    //localStorage.removeItem('Melhor pontuação')
     localStorage.setItem('Melhor pontuação', JSON.stringify(maiorPontuacao))
 }
 
@@ -152,7 +151,7 @@ function comerMaca() {
         maca.novaCoordenada()
         maca.desenha()
         quantMaca += 1
-        pontuacaoAtual.innerHTML = `<p class="pontuacao">Pontuação atual: ${quantMaca}</p>`
+        pontuacaoAtual.innerHTML = `<p class="pontuacao">Pontuação atual: ${quantMaca} &#x1F34E</p>`
         pontuacoes.push(quantMaca)
         totalCobra += 12
     }
