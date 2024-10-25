@@ -36,3 +36,7 @@
     margin-top: 17.3em;
     transform: translate(-50%, -50%); /* ajusta para que o elemento fique alinhado com o ponto central da tela */
 }
+
+.botao__voltar-menu:hover {
+    cursor: pointer;
+}
