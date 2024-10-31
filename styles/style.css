@@ -21,6 +21,11 @@ body {
     margin: 6em 0;
 }
 
+.corpo-pagina {
+    background-image: url("../maca4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /*Página inicial*/
 
 .botao__iniciar-jogo {
@@ -35,3 +40,4 @@ body {
 .botao__iniciar-jogo:hover {
     cursor: pointer;
 }
+
